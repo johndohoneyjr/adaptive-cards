@@ -1,0 +1,4 @@
+adaptivecards
+pymsteams
+azure-identity
+azure-keyvault-secrets

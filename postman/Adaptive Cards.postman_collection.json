@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "a7559209-40a4-44f4-8243-f9e4720d61a4",
+		"name": "Adaptive Cards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "211332"
+	},
+	"item": [
+		{
+			"name": "Post Card to Teams Channel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"message\",\r\n    \"attachments\": [\r\n        {\r\n            \"contentType\": \"application/vnd.microsoft.card.adaptive\",\r\n            \"contentUrl\": null,\r\n            \"content\": {\r\n                \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n                \"type\": \"AdaptiveCard\",\r\n                \"version\": \"1.4\",\r\n                \"body\": [\r\n                    {\r\n                        \"items\": [\r\n                            {\r\n                                \"fontType\": \"Default\",\r\n                                \"size\": \"Medium\",\r\n                                \"text\": \"Hello from adaptivecards and Python using Pypi AdaptiveCards\",\r\n                                \"type\": \"TextBlock\"\r\n                            },\r\n                            {\r\n                                \"columns\": [\r\n                                    {\r\n                                        \"items\": [\r\n                                            {\r\n                                                \"text\": \"author\",\r\n                                                \"type\": \"TextBlock\",\r\n                                                \"weight\": \"Bolder\",\r\n                                                \"wrap\": true\r\n                                            },\r\n                                            {\r\n                                                \"text\": \"version\",\r\n                                                \"type\": \"TextBlock\",\r\n                                                \"weight\": \"Bolder\",\r\n                                                \"wrap\": true\r\n                                            }\r\n                                        ],\r\n                                        \"type\": \"Column\",\r\n                                        \"width\": \"stretch\"\r\n                                    },\r\n                                    {\r\n                                        \"items\": [\r\n                                            {\r\n                                                \"text\": \"Postman with his Python--is this test done yet\",\r\n                                                \"type\": \"TextBlock\",\r\n                                                \"wrap\": true\r\n                                            },\r\n                                            {\r\n                                                \"text\": \"0.1.0\",\r\n                                                \"type\": \"TextBlock\",\r\n                                                \"wrap\": true\r\n                                            }\r\n                                        ],\r\n                                        \"type\": \"Column\",\r\n                                        \"width\": \"stretch\"\r\n                                    }\r\n                                ],\r\n                                \"type\": \"ColumnSet\"\r\n                            }\r\n                        ],\r\n                        \"type\": \"Container\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://microsoft.webhook.office.com/webhookb2/{{hook}}",
+					"protocol": "https",
+					"host": [
+						"microsoft",
+						"webhook",
+						"office",
+						"com"
+					],
+					"path": [
+						"webhookb2",
+						"{{hook}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Req Bin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Id\": 12345,\r\n  \"Customer\": \"John Smith\",\r\n  \"Quantity\": 1,\r\n  \"Price\": 10.00\r\n}"
+				},
+				"url": {
+					"raw": "https://reqbin.com/echo/post/json",
+					"protocol": "https",
+					"host": [
+						"reqbin",
+						"com"
+					],
+					"path": [
+						"echo",
+						"post",
+						"json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
